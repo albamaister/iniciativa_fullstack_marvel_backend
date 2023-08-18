@@ -1,0 +1,19 @@
+server:
+  port: 8090
+  servlet:
+    context-path: '/api/v1'
+
+#config heroes marvel
+heroesmarvel:
+  url: ${MARVEL_URL:https://gateway.marvel.com:443/v1/public/}
+  get:
+    characters: ${GET_CHARACTERS:characters?ts={ts}&apikey={apiKey}&hash={hash}}
+    character: ${GET_CHARACTER:characters/{id}/comics?ts={ts}&apikey={apiKey}&hash={hash}}
+  privateKey: ${PRIVATE_KEY:a41fdecd59c2a13b99eeb1622dae2b03f91d5889}
+  publicKey: ${PUBLIC_KEY:bd1f8c91af62c29afd1a529d588a7598}
+
+#config heroes
+heroes:
+  get:
+    heroes: ${GET_HEROES:/heroes}
+    heroe: ${GET_HEROE:/heroe/{id}}
